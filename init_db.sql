@@ -1,7 +1,7 @@
 -- Створюємо таблицю для працівників
 CREATE TABLE worker (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(1000) NOT NULL CHECK (LENGTH(name) >= 2),
+    name VARCHAR(1000) NOT NULL CHECK (LENGTH(name) >= 2 AND LENGTH(name) <=1000),
     birthday DATE NOT NULL CHECK (YEAR(birthday) > 1900),
     level ENUM('Trainee', 'Junior', 'Middle', 'Senior') NOT NULL,
     salary INT NOT NULL CHECK (salary BETWEEN 100 AND 100000)
@@ -10,7 +10,7 @@ CREATE TABLE worker (
 -- Створюємо таблицю для клієнтів
 CREATE TABLE client (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(1000) NOT NULL CHECK (LENGTH(name) >= 2)
+    name VARCHAR(1000) NOT NULL CHECK (LENGTH(name) >= 2 AND LENGTH(name) <=1000)
 );
 
 -- Створюємо таблицю для проєктів
